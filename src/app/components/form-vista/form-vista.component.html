@@ -1,0 +1,57 @@
+<section class="container">
+  <section class="row d-flex justify-content-center">
+
+    <app-form-listado [componentePadre]="estudiantes"></app-form-listado>
+
+    <article class="col-6 p-3">
+      <form action="" #formulario="ngForm" class="shadow p-4">
+        <section class="input-group mt-3">
+          <label for="nombre" class="me-2 form-label">Nombre: </label>
+          <input type="text" class="form-control" name="nombre" [(ngModel)]="datos.nombre" #nombre="ngModel" required>
+        </section>
+
+        <section *ngIf="nombre.invalid && (nombre.touched || nombre.dirty)">
+          <section *ngIf="nombre.errors?.['required']" class="alert alert-danger mt-3">
+            El campo de Nombre no está completo
+          </section>
+        </section>
+
+
+        <section class="input-group mt-3">
+          <label for="apellido" class="form-label me-2">Apellido: </label>
+          <input type="text" class="form-control" name="apellido" [(ngModel)]="datos.apellidos" #apellido="ngModel" required>
+        </section>
+
+
+        <section *ngIf="apellido.invalid && (apellido.touched || apellido.dirty)">
+          <section *ngIf="apellido.errors?.['required']" class="alert alert-danger mt-3">
+            El campo de Apellido no está completo
+          </section>
+        </section>
+
+
+        <section class="input-group mt-3">
+          <label for="carrera" class="form-label me-2">Carrera: </label>
+          <input type="text" class="form-control" name="carrera" [(ngModel)]="datos.carrera" #carrera="ngModel" required>
+        </section>
+
+        <section *ngIf="carrera.invalid && (carrera.touched || carrera.dirty)">
+          <section *ngIf="carrera.errors?.['required']" class="alert alert-danger mt-3">
+            El campo de Carrera no está completo
+          </section>
+        </section>
+
+
+        <section class="input-group d-flex justify-content-center mt-3">
+          <input
+            [disabled]="!formulario.valid"
+            type="submit" class="btn btn-primary me-3" (click)="onSubmit()" value="Validar">
+            <input
+            [disabled]="!formulario.valid"
+            type="submit" class="btn btn-primary " (click)="limpiar()" value="Limpiar">
+        </section>
+      </form>
+    </article>
+  </section>
+
+</section>

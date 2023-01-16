@@ -1,0 +1,24 @@
+<section class=" d-flex justify-content-center">
+  <section class="col-6 p-3">
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Carrera</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of componentePadre; let i =index" >
+          <th class="d-none">{{i+1}}</th>
+          <th>{{item.nombre}}</th>
+          <td>{{item.apellidos}}</td>
+          <td>{{item.carrera}}</td>
+          <td><button class="btn btn-primary" (click)="eliminarDatos(i)" value="{{i}}">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
+
