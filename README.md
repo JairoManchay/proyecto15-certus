@@ -28,3 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 #
+![Image text](https://github.com/JairoManchay/proyecto15-certus/blob/main/src/assets/parte1.PNG)
